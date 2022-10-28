@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: ak_blog
+    build: ./project
+    command: python -m wsgi 0.0.0.0:8100
+    ports:
+      - 8100:5000
+    volumes:
+      - ./project:/app
+    env_file:
+      - ./project/.env.docker.dev
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:14.5-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=akblogdb
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
