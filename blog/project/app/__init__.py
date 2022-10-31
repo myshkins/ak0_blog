@@ -15,19 +15,20 @@ def init_app():
     db.init_app(app)
     assets = Environment(app)
     assets.init_app(app)
-    login_manager = LoginManager()
-    login_manager.init_app(app)
 
-    @login_manager.user_loader
-    def load_user(user_id):
-        return User.query.get(int(user_id))
     
     with app.app_context():
         from .assets import compile_assets
         from .home import home
         from .resources import resources
+        from .auth import auth
+        from .posts import posts
 
+
+        db.create_all()
         app.register_blueprint(home.home_bp)
         app.register_blueprint(resources.resources_bp)
+        app.register_blueprint(auth.auth_bp)
+        app.register_blueprint(posts.posts_bp)
         compile_assets(assets)
         return app

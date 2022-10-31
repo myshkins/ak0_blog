@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+{% assets "home_style_bundle" %}
+<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
+{% endassets %}
+{% endblock %}
+
+{% block content %}
+{% include "navigation.html" %}
+<div class="big-container">
+    <div class="register-header">register</div>
+    {% if not registered: %}
+    <form method="POST" action="/register">
+        {{ form.csrf_token }}
+        {{ form.username.label }} {{ form.username(size=20) }}
+        {{ form.password.label }} {{ form.password(size=20) }}
+        <input type="submit" value="register">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
