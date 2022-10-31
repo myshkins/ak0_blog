@@ -31,29 +31,29 @@ def compile_assets(assets):
         output='dist/js/home.min.js'
     )
 
-    about_style_bundle = Bundle(
+    resources_style_bundle = Bundle(
         'src/css/*.css',
-        'about_bp/about.css',
+        'resources_bp/resources.css',
         filters='cssmin',
-        output='dist/css/about.css',
+        output='dist/css/resources.css',
         extra={'rel': 'stylesheet/css'}
     )
 
-    about_js_bundle = Bundle(
-        'about_bp/about.js',
+    resources_js_bundle = Bundle(
+        'resources_bp/resources.js',
         filters='jsmin',
-        output='dist/js/about.min.js'
+        output='dist/js/resources.min.js'
     )
     assets.register('main_style_bundle', main_style_bundle)
     assets.register('main_js_bundle', main_js_bundle)
     assets.register('home_style_bundle', home_style_bundle)
     assets.register('home_js_bundle', home_js_bundle)
-    assets.register('about_styles_bundle', about_style_bundle)
-    assets.register('about_js_bundle', about_js_bundle)
+    assets.register('resources_styles_bundle', resources_style_bundle)
+    assets.register('resources_js_bundle', resources_js_bundle)
     if app.config['FLASK_DEBUG'] == 'true':
         main_style_bundle.build()
         home_style_bundle.build()
         home_js_bundle.build()
-        about_style_bundle.build()
-        about_js_bundle.build()
+        resources_style_bundle.build()
+        resources_js_bundle.build()
     return assets

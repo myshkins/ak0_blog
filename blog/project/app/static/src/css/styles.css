@@ -1,5 +1,7 @@
 :root {
-    --bg-color: rgb(255, 255, 255);
+    --bg-color: rgb(44, 47, 53);
+    --nav-bg-color: rgb(112, 122, 128);
+    --nav-text-color: rgb(18, 24, 31);
 }
 
 html {
@@ -25,8 +27,9 @@ h1 {
 .nav-bar {
     display: flex;
     flex-direction: row;
-    /* background-color: rgb(228, 251, 255); */
+    background-color: var(--nav-bg-color);
     font-size: 2rem;
+    padding: 1rem;
     margin-bottom: 4rem;
 }
 
@@ -36,6 +39,6 @@ h1 {
     min-width: 7rem;
     border-radius: 5px;
     padding: 5px 8px;
-    color: rgb(75, 75, 75);
+    color: var(--nav-text-color);
     text-align: center;
 }
