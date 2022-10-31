@@ -1,12 +1,9 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, abort, g
+from flask import Blueprint, render_template, redirect, url_for, flash, abort
 from flask import current_app as app
-from flask_wtf import FlaskForm
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
-from wtforms import StringField, SubmitField, PasswordField, HiddenField
-from wtforms.validators import DataRequired, URL
 from werkzeug.security import generate_password_hash, check_password_hash
-from functools import wraps
 from app.models import db, Post, User
+from app.forms import LoginForm
 
 
 
@@ -15,11 +12,6 @@ auth_bp = Blueprint(
     template_folder='templates',
     static_folder='static')
 
-
-class LoginForm(FlaskForm):
-    username = StringField("username", validators=[DataRequired()])
-    password = PasswordField("password", validators=[DataRequired()])
-    submit = SubmitField("login")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -38,7 +30,10 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             login_user(user)
-            return redirect(url_for('auth'), logged_in=current_user.is_active)
+            return redirect(
+                url_for('auth'),
+                logged_in=current_user.is_active
+                )
     return render_template('login.html', form=form)
 
 
@@ -53,10 +48,21 @@ def register():
             if check_password_hash(hsh, password) and username == 'myshkins':
                 user = User()
                 user.username = form.username.data
-                user.password = generate_password_hash(form.password.data, method="pbkdf2:sha256", salt_length=8)
+                user.password = generate_password_hash(
+                    form.password.data,
+                    method="pbkdf2:sha256",
+                    salt_length=8)
                 db.session.add(user)
                 db.session.commit()
                 login_user(user)
                 flash(f"Welcome, {user.username}")
-            return render_template("register.html", registered=current_user.is_active)
-    return render_template("register.html", form=form, registered=current_user.is_active)
+            return render_template(
+                "register.html",
+                registered=current_user.is_active,
+                form=form,
+                )
+    return render_template(
+        "register.html",
+        form=form,
+        registered=current_user.is_active
+        )

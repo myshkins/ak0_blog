@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+{% assets "posts_style_bundle" %}
+<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+{% endassets %}
+{% endblock %}
+
+{% block content %}
+<div class="big-container">
+    {% include "navigation.html" %}
+    <div class="hello">post</div>
+    <div class="hello">another post</div>
+</div>
+{% endblock %}

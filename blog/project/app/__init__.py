@@ -13,7 +13,8 @@ def init_app():
     app.config.from_object(Config)
     
     db.init_app(app)
-    assets = Environment(app)
+
+    assets = Environment()
     assets.init_app(app)
 
     
@@ -23,7 +24,6 @@ def init_app():
         from .resources import resources
         from .auth import auth
         from .posts import posts
-
 
         db.create_all()
         app.register_blueprint(home.home_bp)

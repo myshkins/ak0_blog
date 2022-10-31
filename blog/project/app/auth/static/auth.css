@@ -1,0 +1,46 @@
+.register-container {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    padding: 5rem;
+    border-radius: 6px;
+    background-color: rgb(167, 181, 209);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    width: fit-content;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: .5rem;
+}
+
+.register-header {
+    color: rgb(35, 54, 34);
+    font-size: 2rem;
+}
+
+label {
+    margin-top: 2rem;
+}
+
+
+input {
+    border-radius: 3px;
+    border: solid 1px rgb(97, 105, 121);
+    height: 2rem;
+}
+
+input[type='submit'] {
+    margin-top: 1rem;
+    height: 3rem;
+    width: min-content;
+    background-color:rgb(161, 199, 189);
+}

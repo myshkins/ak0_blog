@@ -21,15 +21,8 @@ home_bp = Blueprint(
     static_folder='static')
 
 
-class LoginForm(FlaskForm):
-    username = StringField("username", validators=[DataRequired()])
-    password = PasswordField("password", validators=[DataRequired()])
-    submit = SubmitField("login")
-
-
-
 @home_bp.route('/', endpoint='home', methods=['GET'])
 def home():
-    return render_template('index.html', )#logged_in=current_user.is_active)
+    return render_template('index.html', logged_in=current_user.is_active)
 
 

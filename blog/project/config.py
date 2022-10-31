@@ -9,6 +9,9 @@ class Config(object):
     SECRET_KEY = os.environ.get("SECRET_KEY")
     FLASK_DEBUG = os.environ.get("FLASK_DEBUG")
 
+    ASSETS_AUTO_BUILD = True
+    ASSETS_DEBUG = False
+
     # Database               
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
     SQLALCHEMY_ECHO = False      #if 'True', logs all database activity to Python's stderr for debugging.
