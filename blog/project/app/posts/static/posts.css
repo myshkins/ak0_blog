@@ -1,14 +1,23 @@
-.new-post-container {
+:root {
+    --container-bg-color: rgb(167, 181, 209);
+    --input-btn-bg-color: rgb(161, 199, 189);
+    --input-border-color: rgb(97, 105, 121);
+    --render-post-bg-color: rgb(225, 235, 168);
+}
+
+.outer-container {
     margin-top: 4rem;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
 }
 
+/* new post */
+
 .post-form-container {
     padding: 5rem;
     border-radius: 6px;
-    background-color: rgb(167, 181, 209);
+    background-color: var(--container-bg-color);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr) fit-content 1fr;
@@ -31,19 +40,42 @@ label {
     margin-top: 2rem;
 }
 
-
 input {
     border-radius: 3px;
-    border: solid 1px rgb(97, 105, 121);
+    border: solid 1px var(--input-border-color);
     height: 2rem;
 }
 
 textarea {
     height: 50vh;
 }
+
 input[type='submit'] {
     margin-top: 1rem;
     height: 3rem;
     width: min-content;
-    background-color:rgb(161, 199, 189);
+    background-color: var(--input-btn-bg-color);
+}
+
+/* allposts */
+ul {
+    padding: 1rem 50vw 1rem 1rem;
+    font-size: 2rem;
+    background-color: var(--container-bg-color);
+    width: fit-content;
+    list-style: none;
+    border-radius: 6px;
+}
+
+ul a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+/* rendered posts */
+.render-post-container {
+    width: 80vw;
+    padding: 2rem;
+    border-radius: 6px;
+    background-color: var(--render-post-bg-color);
 }

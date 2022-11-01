@@ -1,6 +1,6 @@
 :root {
     --bg-color: rgb(44, 47, 53);
-    --nav-bg-color: rgb(112, 122, 128);
+    --nav-bg-color: rgb(128, 123, 112);
     --nav-text-color: rgb(18, 24, 31);
 }
 
@@ -28,7 +28,7 @@ h1 {
     display: flex;
     flex-direction: row;
     background-color: var(--nav-bg-color);
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding: 1rem;
     margin-bottom: 4rem;
 }
@@ -41,4 +41,8 @@ h1 {
     padding: 5px 8px;
     color: var(--nav-text-color);
     text-align: center;
+}
+
+a {
+    text-decoration: none !important;
 }

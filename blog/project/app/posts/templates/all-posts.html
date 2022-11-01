@@ -7,9 +7,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="big-container">
-    {% include "navigation.html" %}
-    <div class="hello">post</div>
-    <div class="hello">another post</div>
+{% include "navigation.html" %}
+<div class="outer-container">
+    <ul class="all-post-title-list">
+        {% for title in titles: %}
+        <li class="title">
+        <a href="{{ url_for('posts_bp.render_post', post_id=title[1]) }}">{{title[0]}}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

@@ -12,6 +12,7 @@ import time
 from datetime import datetime as dt
 from datetime import timedelta
 from app.models import db, Post, User
+import markdown
 
 
 
@@ -23,6 +24,19 @@ home_bp = Blueprint(
 
 @home_bp.route('/', endpoint='home', methods=['GET'])
 def home():
-    return render_template('index.html', logged_in=current_user.is_active)
+    query = Post.query.limit(5).all()
+    posts = []
+    for post in query:
+        title = post.title
+        post_id = post.id
+        md = markdown.markdown(post.content)
+        end_ind = md.find('</p>')
+        blurb = md[3:end_ind]
+        posts.append((title, post_id, blurb))
+    return render_template(
+        'index.html',
+        posts=posts,
+        logged_in=current_user.is_active
+        )
 
 

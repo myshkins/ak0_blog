@@ -10,7 +10,7 @@
 {% include "navigation.html" %}
 <div class="big-container">
     <div class="greeting-container">
-        <div class="greeting">hello this is my blog about all things coding. A
+        <div class="greeting">Hi, I'm Alex, and this is my blog about all things coding. A
             lot of the posts here describe how I worked my way through projects.
             These posts are meant to be a place for me to record my process as
             as well as a place to share what I've done and hopefully help out
@@ -19,10 +19,19 @@
             friendly email. Cheers, Alex.
         </div>
     </div>
-    <div class="latest-posts-container">
-        <div class="latest-posts-header">latest posts</div>
-        <div class="blurbs-container">
-            <div class="blurb">an example here</div>
+    <div class="latest-posts-outer">
+        <div class="latest-posts-inner">
+            <div class="latest-posts-header">latest posts</div>
+            {% for post in posts %}
+            <div class="hr"></div>
+            <a href="{{ url_for('posts_bp.render_post', post_id=post[1]) }}">
+                <div class="blurb-container">
+                    <div class="blurb-title">{{ post[0] }}</div>
+                    <div class="blurb-content">{{ post[2] }}</div>
+                    {# <div class="hr-spacer"></div> #}
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -1,19 +1,82 @@
 :root {
-    --greeting-color: rgb(240, 200, 125);
+    --greeting-color: rgb(243, 220, 178);
+    --greeting-font-size: 1.8rem;
+    --header-color: rgb(223, 184, 113);
+    --header-font-size: 2.5rem;
+    --hr-color: rgb(131, 124, 111);
+    --blurb-title-color: rgb(180, 140, 66);
+    --blurb-content-bg-color: #4b505a;
+    --content-font-size: 1.3rem;
 }
 .big-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto fit-content);
+    grid-auto-flow: row;
     padding: 1rem;
+    justify-content: center;
 }
 
 .greeting-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    margin-bottom: 6rem;
 }
 
 .greeting {
-    max-width: 80%;
-    font-size: 1.5rem;
+    font-size: var(--greeting-font-size);
     color: var(--greeting-color);
+    width: 60vw;
+}
+
+.latest-posts-outer {
+    display: flex;
+    justify-content: center;
+}
+
+.latest-posts-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto fit-content);
+    grid-auto-flow: row;
+    gap: 1px;
+    background-color: var(--hr-color);
+}
+
+.hr {
+    width: 80vw;
+}
+
+/* .hr-spacer {
+    height: 2rem;
+    background-color: var(--bg-color);
+} */
+
+.latest-posts-header {
+    font-size: var(--header-font-size);
+    color: var(--header-color);
+    background-color: var(--bg-color);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.blurb-container {
+    padding: 1rem 0rem 2rem 0rem;
+    color: var(--header-color);
+    background-color: var(--bg-color);
+}
+
+.blurb-title {
+    font-size: var(--greeting-font-size);
+    color: var(--blurb-title-color);
+}
+
+
+
+.blurb-content {
+    padding: .5rem;
+    font-size: var(--content-font-size);
+    background-color: var(--blurb-content-bg-color);
+    border-radius: 4px;
 }

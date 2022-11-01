@@ -7,11 +7,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 
-pw = ''
-hsh = generate_password_hash(pw, method="pbkdf2:sha256", salt_length=8)
-print(hsh)
+# pw = ''
+# hsh = generate_password_hash(pw, method="pbkdf2:sha256", salt_length=8)
+# print(hsh)
 
-print(check_password_hash(hsh, pw))
+# print(check_password_hash(hsh, pw))
 
 
 # from flask import Flask, request, jsonify
@@ -23,3 +23,6 @@ print(check_password_hash(hsh, pw))
 # decyph = base64.b64decode(auth_cyph).decode("utf-8")
 # print(decyph)
 
+x = '("heres",)'
+y = x[2:-3]
+print(y)
