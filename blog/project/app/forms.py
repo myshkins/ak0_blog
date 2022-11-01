@@ -10,6 +10,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField("login")
 
 class PostForm(FlaskForm):
-    username = StringField("username", validators=[DataRequired()])
-    password = PasswordField("password", validators=[DataRequired()])
-    submit = SubmitField("login")
+    title = StringField("title", validators=[DataRequired()])
+    content = TextAreaField("content", validators=[DataRequired()])
+    submit = SubmitField("submit")

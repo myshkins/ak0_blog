@@ -1,6 +1,49 @@
-.big-container {
+.new-post-container {
+    margin-top: 4rem;
+    font-size: 1.5rem;
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    justify-content: center;
 }
 
+.post-form-container {
+    padding: 5rem;
+    border-radius: 6px;
+    background-color: rgb(167, 181, 209);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr) fit-content 1fr;
+    width: 85%;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: .5rem;
+}
+
+.new-post-header {
+    color: rgb(35, 54, 34);
+    font-size: 2rem;
+}
+
+label {
+    margin-top: 2rem;
+}
+
+
+input {
+    border-radius: 3px;
+    border: solid 1px rgb(97, 105, 121);
+    height: 2rem;
+}
+
+textarea {
+    height: 50vh;
+}
+input[type='submit'] {
+    margin-top: 1rem;
+    height: 3rem;
+    width: min-content;
+    background-color:rgb(161, 199, 189);
+}
