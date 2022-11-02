@@ -5,6 +5,7 @@ from flask_login import UserMixin
 class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
+    tags = db.Column(db.String, unique=False, nullable=True,)
     title = db.Column(db.String, unique=True, nullable=False,)
     content = db.Column(db.Text, unique=False, nullable=False)
     time = db.Column(db.DateTime, index=True, unique=False, nullable=False)
@@ -36,7 +37,7 @@ class Comment(db.Model):
     def __repr__(self):
         return '<Comment {}>'.format(self.id)
 
-class Likes(db):
+class Likes(db.Model):
     __tablename__ = 'likes'
     id = db.Column(db.Integer, primary_key=True)
     number = db.Column(db.Integer, unique=False, nullable=True)

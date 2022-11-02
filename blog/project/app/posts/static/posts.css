@@ -53,17 +53,24 @@ input[type='submit'] {
 }
 
 /* allposts */
+.post-list-container {
+    display: grid;
+    grid-template-columns: 80vw;
+}
+
 ul {
-    padding: 1rem 50vw 1rem 1rem;
+    margin-right: auto;
+    padding: 1rem;
     font-size: 2rem;
-    background-color: var(--container-bg-color);
-    width: fit-content;
+    background-color: var(--bg-color);
+    width: 100%;
     list-style: none;
     border-radius: 6px;
+    line-height: 3rem;
 }
 
 ul a {
-    color: darkblue;
+    color: var(--contact-link-color);
     text-decoration: none;
 }
 

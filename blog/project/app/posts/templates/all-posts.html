@@ -9,12 +9,14 @@
 {% block content %}
 {% include "navigation.html" %}
 <div class="outer-container">
-    <ul class="all-post-title-list">
-        {% for title in titles: %}
-        <li class="title">
-        <a href="{{ url_for('posts_bp.render_post', post_id=title[1]) }}">{{title[0]}}</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="post-list-container">
+        <ul class="all-post-title-list">
+            {% for title in titles: %}
+            <li class="title">
+            <a href="{{ url_for('posts_bp.render_post', post_id=title[1]) }}"> - {{title[0]}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}
