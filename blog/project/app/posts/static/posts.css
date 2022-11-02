@@ -1,8 +1,8 @@
 :root {
-    --container-bg-color: rgb(167, 181, 209);
+    --container-bg-color: rgb(177, 165, 146);
     --input-btn-bg-color: rgb(161, 199, 189);
     --input-border-color: rgb(97, 105, 121);
-    --render-post-bg-color: rgb(225, 235, 168);
+    --render-post-bg-color: rgb(235, 228, 217);
 }
 
 .outer-container {
@@ -78,4 +78,11 @@ ul a {
     padding: 2rem;
     border-radius: 6px;
     background-color: var(--render-post-bg-color);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.render-post-container img {
+    float: left;
+    width: 40%;
+    margin: .5rem 1rem 0 0;
 }

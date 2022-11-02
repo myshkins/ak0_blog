@@ -27,9 +27,10 @@ h1 {
 .nav-bar {
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: var(--nav-bg-color);
     font-size: 1.6rem;
-    padding: 1rem;
+    padding: .7rem 1rem;
     margin-bottom: 4rem;
 }
 
@@ -45,4 +46,12 @@ h1 {
 
 a {
     text-decoration: none !important;
+}
+
+a.logo-img {
+    margin-right: auto;
+}
+
+.btn-nav img {
+    max-height: 50px;
 }
