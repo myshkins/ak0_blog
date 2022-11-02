@@ -11,7 +11,7 @@
 <div class="outer-container">
     <div class="post-form-container">
         <div class="new-post-header">edit post</div>
-        <form method="POST" action="/new-post">
+        <form method="POST" action="{{ url_for('posts_bp.edit_post', post_id=post_id) }}">
             {{ form.csrf_token }}
             {{ form.title.label }} {{ form.title(size=20) }}
             {{ form.content.label }} {{ form.content(size=20) }}

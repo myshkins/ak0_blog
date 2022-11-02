@@ -8,8 +8,9 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, unique=True, nullable=False,)
     content = db.Column(db.Text, unique=False, nullable=False)
-    time = db.Column(db.DateTime, index=False, unique=False, nullable=False)
-    updated = db.Column(db.DateTime, index=False, unique=False, nullable=True)
+    time = db.Column(db.DateTime, index=True, unique=False, nullable=False)
+    updated = db.Column(db.DateTime, index=True, unique=False, nullable=True)
+    likes = db.Column(db.Integer, unique=False, nullable=True)
     comments = db.relationship("Comment", back_populates='posts')
     def __repr__(self):
         return '<Post {}>'.format(self.title)

@@ -46,10 +46,7 @@ def new_post():
         post.time = timestamp
         db.session.add(post)
         db.session.commit()
-        return redirect(
-            url_for('posts_bp.all_posts'),
-            logged_in=current_user.is_active
-            )
+        return redirect(url_for('posts_bp.all_posts'))
     return render_template(
         'new-post.html',
         form=form,
@@ -72,8 +69,20 @@ def all_posts():
 def edit_post(post_id):
     post = Post.query.get(post_id)
     form = PostForm(title=post.title, content=post.content)
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        timestamp = dt.now().strftime("%b, %d, %Y")
+        post.updated = timestamp
+        db.session.commit()
+        return redirect(
+            url_for('posts_bp.render_post',
+            post_id=post_id,
+            logged_in=current_user.is_active)
+            )
     return render_template(
         'edit-post.html',
+        post_id=post_id,
         form=form,
         logged_in=current_user.is_active
         )
