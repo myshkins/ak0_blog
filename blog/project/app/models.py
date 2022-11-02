@@ -1,9 +1,8 @@
 from app import db
 from flask_login import UserMixin
 
-class Post(db.Model):
-    """Data model for blog posts."""
 
+class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, unique=True, nullable=False,)
@@ -36,3 +35,10 @@ class Comment(db.Model):
     posts = db.relationship('Post', back_populates='comments')
     def __repr__(self):
         return '<Comment {}>'.format(self.id)
+
+class Likes(db):
+    __tablename__ = 'likes'
+    id = db.Column(db.Integer, primary_key=True)
+    number = db.Column(db.Integer, unique=False, nullable=True)
+    def __repr__(self):
+        return '<Likes {}>'.format(self.number)

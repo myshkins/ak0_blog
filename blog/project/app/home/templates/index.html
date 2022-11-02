@@ -9,8 +9,16 @@
 {% block content %}
 {% include "navigation.html" %}
 <div class="big-container">
+    <div class="like-container">
+        <div class="btn-like">
+            <img src="{{ url_for('static', filename='img/heart-outline.png') }}">
+        </div>
+        <div class="like-count">
+            <span>1,000</span>
+        </div>
+    </div>
     <div class="greeting-container">
-        <div class="greeting">Hi, I'm Alex, and this is my blog about all things coding. A
+        <div class="greeting">Welcome to my blog about all things coding. A
             lot of the posts here describe how I worked my way through projects.
             These posts are meant to be a place for me to record my process as
             as well as a place to share what I've done and hopefully help out

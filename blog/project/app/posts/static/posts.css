@@ -73,9 +73,14 @@ ul a {
     padding: 2rem;
     border-radius: 6px;
     background-color: var(--render-post-bg-color);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--post-font-family);
+    line-height: 2.8rem;
+    font-size: 1.9rem;
 }
 
+.render-post-container h3 {
+    font-family: var(--body-font-family);
+}
 .render-post-container img {
     float: left;
     width: 40%;

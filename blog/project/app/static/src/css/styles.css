@@ -8,13 +8,16 @@
     --header-font-size: 2.5rem;
     --hr-color: rgb(131, 124, 111);
     --blurb-title-color: rgb(180, 140, 66);
-    --blurb-content-bg-color: #4b505a;
+    --blurb-content-bg-color: #3f434b;
     --content-font-size: 1.3rem;
     --contact-link-color: rgb(255, 123, 0);
     --container-bg-color: rgb(177, 165, 146);
     --input-btn-bg-color: rgb(161, 199, 189);
     --input-border-color: rgb(97, 105, 121);
     --render-post-bg-color: rgb(235, 228, 217);
+    --body-font-family:  Share Tech Mono, Arial, Helvetica;
+    --post-font-family:  'LinearRegular', Helvetica, Arial;
+    /* --post-font-family:  'GidolinyaRegular', Helvetica, Arial; */
 }
 
 html {
@@ -29,7 +32,7 @@ body {
 body,html {
     margin: 0;
     padding: 0;
-    font-family: Share Tech Mono, Arial, Helvetica;
+    font-family: var(--body-font-family);
 }
 
 h1 {
@@ -44,7 +47,6 @@ h1 {
     background-color: var(--nav-bg-color);
     font-size: 1.6rem;
     padding: .7rem 1rem;
-    margin-bottom: 4rem;
 }
 
 .btn-nav {
