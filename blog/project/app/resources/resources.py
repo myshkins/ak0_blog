@@ -9,13 +9,9 @@ resources_bp = Blueprint(
     template_folder='templates',
     static_folder='static')
 
-@resources_bp.route('/about', endpoint='resources', methods=['GET'])
+@resources_bp.route('/about', endpoint='about', methods=['GET'])
 def about():
     return render_template('about.html')
-
-@resources_bp.route('/contents', endpoint='contents', methods=['GET'])
-def contents():
-    return render_template('contents.html')
 
 @resources_bp.route('/contact', endpoint='contact', methods=['GET'])
 def contact():

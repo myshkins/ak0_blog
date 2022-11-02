@@ -1,13 +1,4 @@
-:root {
-    --greeting-color: rgb(243, 220, 178);
-    --greeting-font-size: 1.8rem;
-    --header-color: rgb(223, 184, 113);
-    --header-font-size: 2.5rem;
-    --hr-color: rgb(131, 124, 111);
-    --blurb-title-color: rgb(180, 140, 66);
-    --blurb-content-bg-color: #4b505a;
-    --content-font-size: 1.3rem;
-}
+
 .big-container {
     display: grid;
     grid-template-columns: 1fr;

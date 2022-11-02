@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+{% assets "resources_style_bundle" %}
+<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+{% endassets %}
+{% endblock %}
+
+{% block content %}
+{% include "navigation.html" %}
+<div class="outer-container">
+    <section class="call-to-act">
+        <div class="call-container">
+            <h1>Hit me up!</h1>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact-container">
+            <h2 class="contact-header">contact info</h2>
+            <p class="email">email: <a href="mailto:alex@ak0.io">alex@ak0.io</a></p>
+            <p class="web-portfolio">web-portfolio: <a href="https://ak0.io">ak0.io</a></p>
+            <p class="github">github: <a href="https://github.com/myshkins">myshkins</a></p>
+            <p class="linked-in">linked-in: <a href="https://www.linkedin.com/in/alex-krenitsky/">Alex Krenitsky</a></p>
+        </div>
+</div>
+{% endblock %}

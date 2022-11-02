@@ -1,14 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pagestyles %}
-    {% assets "about_style_bundle" %}
-    <link
-        href="{{ url_for('static', filename='dist/css/style.min.css') }}"
-        rel="stylesheet"
-        type="text/css"
-    />
-  {% endassets %}
+{% assets "resources_style_bundle" %}
+<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+{% endassets %}
 {% endblock %}
 
 {% block content %}
-  {% include "navigation.html" %}
+{% include "navigation.html" %}
+<div class="outer-container">
+    <div class="about-container">
+      <p>Hey, I'm Alex Krenitsky, a NYC public school teacher turned software 
+      developer. Though teaching is a great profession, I found that I can have 
+      a much greater impact on the world as a software engineer. I'm always 
+      looking to connect with new people and learn new things, so let me know if
+      you have any thoughts about my work here.</p>
+    </div>
+</div>
+{% endblock %}

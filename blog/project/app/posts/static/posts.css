@@ -1,9 +1,4 @@
-:root {
-    --container-bg-color: rgb(177, 165, 146);
-    --input-btn-bg-color: rgb(161, 199, 189);
-    --input-border-color: rgb(97, 105, 121);
-    --render-post-bg-color: rgb(235, 228, 217);
-}
+
 
 .outer-container {
     margin-top: 4rem;

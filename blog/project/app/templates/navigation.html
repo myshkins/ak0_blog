@@ -6,8 +6,8 @@
       </a>
       <a class='btn-nav' id='btn-home' href="{{ url_for('home_bp.home') }}">home</a>
       <a class='btn-nav' id='btn-about' href="{{ url_for('posts_bp.all_posts')}}">all posts</a>
-      <a class='btn-nav' id='btn-about' href="https://blog.ak0.io/about">about</a>
-      <a class='btn-nav' id='btn-contact' href="https://blog.ak0.io/contact">contact</a>
+      <a class='btn-nav' id='btn-about' href="{{ url_for('resources_bp.about')}}">about</a>
+      <a class='btn-nav' id='btn-contact' href="{{ url_for('resources_bp.contact') }}">contact</a>
       {% if logged_in %}
       <a class='btn-nav' id='btn-contact' href="{{ url_for('posts_bp.new_post')}}">new post</a>
       {% endif %}

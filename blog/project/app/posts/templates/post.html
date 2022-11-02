@@ -15,7 +15,7 @@
             {{ content|safe }}
         </div>
         {% if logged_in: %}
-        <a class="btn-edit" href="{{ url_for('posts_bp.edit_post', post_id=post_id) }}">edit-post</a>
+        <a class="btn-edit" href="{{ url_for('posts_bp.edit_post', post_id=post_id) }}">edit post</a>
         {% endif %}
     </div>
 </div>

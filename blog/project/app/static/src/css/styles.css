@@ -2,6 +2,19 @@
     --bg-color: rgb(44, 47, 53);
     --nav-bg-color: rgb(128, 123, 112);
     --nav-text-color: rgb(18, 24, 31);
+    --greeting-color: rgb(243, 220, 178);
+    --greeting-font-size: 1.8rem;
+    --header-color: rgb(223, 184, 113);
+    --header-font-size: 2.5rem;
+    --hr-color: rgb(131, 124, 111);
+    --blurb-title-color: rgb(180, 140, 66);
+    --blurb-content-bg-color: #4b505a;
+    --content-font-size: 1.3rem;
+    --contact-link-color: rgb(255, 123, 0);
+    --container-bg-color: rgb(177, 165, 146);
+    --input-btn-bg-color: rgb(161, 199, 189);
+    --input-border-color: rgb(97, 105, 121);
+    --render-post-bg-color: rgb(235, 228, 217);
 }
 
 html {
