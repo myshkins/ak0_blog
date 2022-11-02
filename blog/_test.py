@@ -4,7 +4,7 @@ from datetime import timedelta
 import requests
 import base64
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from urllib.parse import urlparse, urljoin
 
 
 # pw = ''
@@ -21,8 +21,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # auth_cyph = "bXlzaGtpbnM6d29yZHBhc3M="
 # decyph = base64.b64decode(auth_cyph).decode("utf-8")
-# print(decyph)
+# # print(decyph)
 
-x = '("heres",)'
-y = x[2:-3]
-print(y)
+# x = '("heres",)'
+# y = x[2:-3]
+# print(y)
+

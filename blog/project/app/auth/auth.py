@@ -21,22 +21,6 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@auth_bp.route('/login', endpoint='login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
-        user = User.query.filter_by(username=username).first()
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            return redirect(
-                url_for('auth'),
-                logged_in=current_user.is_active
-                )
-    return render_template('login.html', form=form)
-
-
 @auth_bp.route('/register', endpoint='register', methods=["POST", "GET"])
 def register():
     form = LoginForm()
@@ -66,3 +50,27 @@ def register():
         form=form,
         registered=current_user.is_active
         )
+
+
+@auth_bp.route('/login', endpoint='login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+        user = User.query.filter_by(username=username).first()
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+            return redirect(
+                url_for('home_bp.home'),
+                )
+    return render_template(
+        'login.html', 
+        form=form, 
+        logged_in=current_user.is_active
+        )
+
+@auth_bp.route('/logout', endpoint='logout', methods=['GET'])
+def logout():
+    logout_user()
+    return redirect(url_for('home_bp.home'))

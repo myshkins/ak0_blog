@@ -1,17 +1,24 @@
 {% extends "layout.html" %}
 
 {% block pagestyles %}
-    {% assets "home_style_bundle" %}
-    <link
-        href="{{ ASSET_URL }}"
-        rel="stylesheet"
-        type="text/css"
-    />
-  {% endassets %}
+{% assets "auth_style_bundle" %}
+<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
+{% endassets %}
 {% endblock %}
 
 {% block content %}
-    {% include "navigation.html" %}
-    <div class="big-container">
+{% include "navigation.html" %}
+<div class="register-container">
+    <div class="form-container">
+        <div class="register-header">login</div>
+        {% if not logged_in: %}
+        <form method="POST" action="/login">
+            {{ form.csrf_token }}
+            {{ form.username.label }} {{ form.username(size=20) }}
+            {{ form.password.label }} {{ form.password(size=20) }}
+            <input type="submit" value="login">
+        </form>
+        {% endif %}
     </div>
+</div>
 {% endblock %}
