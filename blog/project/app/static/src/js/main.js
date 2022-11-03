@@ -29,7 +29,7 @@ const updateLikes = (jsonData) => {
 function addLike(e) {
     console.log(e)
     window.location.reload()
-    fetch('/like')
+    fetch('http://blog.ak0.io/like')
         .then((response) => response.json())
         .then(updateLikes)
     likeButton.removeEventListener('click', addLike)
