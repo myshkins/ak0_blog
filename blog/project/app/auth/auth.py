@@ -40,11 +40,7 @@ def register():
                 db.session.commit()
                 login_user(user)
                 flash(f"Welcome, {user.username}")
-            return render_template(
-                "register.html",
-                registered=current_user.is_active,
-                form=form,
-                )
+            return redirect(url_for('home_bp.home'))
     return render_template(
         "register.html",
         form=form,
@@ -61,9 +57,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             login_user(user)
-            return redirect(
-                url_for('home_bp.home'),
-                )
+            return redirect(url_for('home_bp.home'))
     return render_template(
         'login.html', 
         form=form, 

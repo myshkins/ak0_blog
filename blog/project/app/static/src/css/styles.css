@@ -70,3 +70,12 @@ a.logo-img {
 .btn-nav img {
     max-height: 50px;
 }
+
+.btn-like {
+    background-color: transparent;
+}
+
+.heart-wrap {
+    background-color: transparent;
+    border: none;
+}

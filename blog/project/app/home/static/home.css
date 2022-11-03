@@ -8,11 +8,11 @@
     margin: 4rem 6rem;
 }
 
-.like-container {
+.home-like-container {
     display: flex;
 }
 
-.like-container img {
+.home-like-container img {
     width: 35px;
 }
 
