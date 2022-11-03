@@ -29,6 +29,8 @@ def get_session_data():
 
 @home_bp.route('/', endpoint='home', methods=['GET'])
 def home():
+    if not Likes.query.first():
+        first_like()
     query = Post.query.limit(5).all()
     posts = []
     for post in query:
@@ -63,7 +65,7 @@ def like():
 @home_bp.route('/first-like', endpoint='first-like', methods=['GET'])
 def first_like():
     likes = Likes()
-    likes.number = 1
+    likes.number = 0
     db.session.add(likes)
     db.session.commit()
     return redirect(url_for('home_bp.home'))

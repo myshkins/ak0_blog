@@ -27,12 +27,11 @@ const updateLikes = (jsonData) => {
 
 function addLike(e) {
     console.log(e)
-    e.target.classList.add('liked')
-    e.target.classList.remove('btn-like')
-    // e.target.src = "/static/img/heart-fill.png"
+    window.location.reload()
     fetch('/like')
         .then((response) => response.json())
         .then(updateLikes)
     likeButton.removeEventListener('click', addLike)
     updateHeart()
+
 }
