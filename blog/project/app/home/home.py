@@ -15,7 +15,7 @@ import markdown
 import logging
 
 
-logging.basicConfig(filename='blog_log.txt', level=logging.DEBUG)
+# logging.basicConfig(filename='blog_log.txt', level=logging.DEBUG)
 
 home_bp = Blueprint(
     'home_bp', __name__,

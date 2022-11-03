@@ -25,6 +25,7 @@ const updateLikes = (jsonData) => {
     likeCount.textContent = jsonData['likes'] + " " + "likes"
 }
 
+
 function addLike(e) {
     console.log(e)
     window.location.reload()
@@ -33,5 +34,4 @@ function addLike(e) {
         .then(updateLikes)
     likeButton.removeEventListener('click', addLike)
     updateHeart()
-
 }
