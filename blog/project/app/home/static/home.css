@@ -48,6 +48,7 @@
     grid-auto-flow: row;
     gap: 1px;
     background-color: var(--hr-color);
+    max-width: 70vw;
 }
 
 .hr {
@@ -65,17 +66,15 @@
 
 .blurb-wrap {
     background-color: var(--bg-color);
-    width: 80vw;
     display: flex;
     justify-content: center;
-    width: 80vw;
 }
 
 .blurb-container {
     padding: 1rem 0rem 2rem 0rem;
     color: var(--header-color);
     background-color: var(--bg-color);
-    width: clamp(40rem, 100rem, 80vw);
+    width: clamp(40rem, 80rem, 60vw);
 }
 
 .blurb-title {

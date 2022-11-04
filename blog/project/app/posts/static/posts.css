@@ -76,8 +76,12 @@ ul a {
 
 /* rendered posts */
 .render-post-container {
-    width: 80vw;
-    padding: 4rem 10rem 4rem 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    /* padding: 4rem 10rem 4rem 6rem; */
     border-radius: 6px;
     background-color: var(--render-post-bg-color);
     font-family: var(--post-font-family);
@@ -85,6 +89,9 @@ ul a {
     font-size: 1.9rem;
 }
 
+.render-post-content {
+    width: clamp(50rem, 70%, 80rem);
+}
 .render-post-container h3 {
     font-family: var(--body-font-family);
 }
