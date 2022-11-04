@@ -11,6 +11,7 @@ from datetime import timedelta
 from app.models import db, Post
 from app.forms import PostForm
 import markdown
+from markdown.extensions import codehilite
 
 
 
@@ -24,7 +25,11 @@ posts_bp = Blueprint(
 def render_post(post_id):
     requested_post = Post.query.get(post_id)
     title = requested_post.title
-    content = markdown.markdown(requested_post.content)
+    content = markdown.markdown(
+        requested_post.content, 
+        extensions=['codehilite', 'fenced_code'], 
+        output_format="html5"
+        )
     post_id = requested_post.id
     return render_template(
         'post.html',
