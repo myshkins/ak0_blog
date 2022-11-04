@@ -1,7 +1,7 @@
 
 
 .outer-container {
-    margin-top: 4rem;
+    margin: 4rem 5rem;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
@@ -75,13 +75,13 @@ ul a {
 }
 
 /* rendered posts */
+
 .render-post-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: fit-content;
-    /* padding: 4rem 10rem 4rem 6rem; */
+    width: clamp(60rem, 80%, 100rem);
+    padding: 4rem;
     border-radius: 6px;
     background-color: var(--render-post-bg-color);
     font-family: var(--post-font-family);
@@ -90,7 +90,7 @@ ul a {
 }
 
 .render-post-content {
-    width: clamp(50rem, 70%, 80rem);
+    width: clamp(50rem, 80%, 90rem);
 }
 .render-post-container h3 {
     font-family: var(--body-font-family);
