@@ -75,7 +75,22 @@ a.logo-img {
     background-color: transparent;
 }
 
+.hearted {
+    visibility: visible;
+}
+
+.unhearted {
+    visibility: hidden;
+}
+
 .heart-wrap {
     background-color: transparent;
     border: none;
+}
+
+
+
+.not-hearted {
+    position: relative;
+    left: 39px;
 }

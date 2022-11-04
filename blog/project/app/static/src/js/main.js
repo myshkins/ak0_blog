@@ -1,37 +1,38 @@
 const likeButton = document.querySelector('.heart-wrap')
 const likeCount = document.querySelector('.like-count span')
-const heartImg = document.querySelector('.hearted')
-const isItLiked = document.querySelector('.is-it-liked')
+const heartedImg = document.getElementById('heart-fill')
+const notHeartedImg = document.querySelector('.not-hearted')
+// const isItLiked = document.querySelector('.is-it-liked')
 
 likeButton.addEventListener('click', addLike)
 
 const updateHeart = () => {
-    console.log('heart update')
-    if (isItLiked.textContent === 'liked') {
-        console.log('hearted')
-        heartImg.src = "/static/img/heart-fill.png"
+    if (document.querySelector('.is-it-liked')) {
+        heartedImg.classList.remove('unhearted')
+        heartedImg.classList.add('hearted')
         likeButton.removeEventListener('click', addLike)
     } else {
-        console.log('not hearted')
-        heartImg.src = "/static/img/heart-outline.png"
+        heartedImg.classList.add('unhearted')
     }
 }
 
 heartUpdater = updateHeart
 heartUpdater()
 
-const updateLikes = (jsonData) => {
-    console.log(jsonData)
-    likeCount.textContent = jsonData['likes'] + " " + "likes"
+const updateLikes = () => {
+    newCount = likeCount.textContent.split(' ')[0] + 1
+    likeCount.textContent = newCount + " " + "likes"
+    heartUpdater()
 }
 
 
 function addLike(e) {
-    console.log(e)
     window.location.reload()
-    fetch('http://blog.ak0.io/like')
-        .then((response) => response.json())
-        .then(updateLikes)
+    fetch('/like')
+        // .then((response) => response.json())
+        // .then(updateLikes)
     likeButton.removeEventListener('click', addLike)
+    heartedImg.classList.add('hearted')
     updateHeart()
+    location.reload()
 }

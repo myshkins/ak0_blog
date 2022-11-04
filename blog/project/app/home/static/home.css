@@ -44,7 +44,7 @@
 .latest-posts-inner {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto fit-content);
+    grid-template-rows: repeat(auto 1fr);
     grid-auto-flow: row;
     gap: 1px;
     background-color: var(--hr-color);
@@ -55,7 +55,6 @@
 }
 
 
-
 .latest-posts-header {
     font-size: var(--header-font-size);
     color: var(--header-color);
@@ -64,11 +63,19 @@
     padding-bottom: 1rem;
 }
 
+.blurb-wrap {
+    background-color: var(--bg-color);
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+}
+
 .blurb-container {
     padding: 1rem 0rem 2rem 0rem;
     color: var(--header-color);
     background-color: var(--bg-color);
-    padding: 2rem 3rem;
+    width: clamp(40rem, 100rem, 80vw);
 }
 
 .blurb-title {

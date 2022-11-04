@@ -11,8 +11,11 @@
 <div class="big-container">
     <div class="home-like-container">
         <button class="heart-wrap">
-            <div class="is-it-liked" hidden>{{ data['liked'] }}</div>
-            <img class="hearted" src="{{ url_for('static', filename='img/heart-outline.png') }}">
+            {% if data['liked'] == 'liked' %}
+            <div class="is-it-liked" hidden></div>
+            {% endif %}
+            <img class="not-hearted" id="heart-fill" src="{{ url_for('static', filename='img/heart-fill.png') }}">
+            <img class="heart-outline" src="{{ url_for('static', filename='img/heart-outline.png') }}">
         </button>
         <div class="like-count">
             <span>{{likes}} likes</span>
@@ -32,14 +35,15 @@
         <div class="latest-posts-inner">
             <div class="latest-posts-header">latest posts</div>
             {% for post in posts %}
-            <div class="hr"></div>
-            <a href="{{ url_for('posts_bp.render_post', post_id=post[1]) }}">
-                <div class="blurb-container">
-                    <div class="blurb-title">{{ post[0] }}</div>
-                    <div class="blurb-content">{{ post[2] }}</div>
-                    {# <div class="hr-spacer"></div> #}
-                </div>
-            </a>
+            <div class="blurb-wrap">
+                {# <div class="hr"></div> #}
+                <a href="{{ url_for('posts_bp.render_post', post_id=post[1]) }}">
+                    <div class="blurb-container">
+                        <div class="blurb-title">{{ post[0] }}</div>
+                        <div class="blurb-content">{{ post[2] }}</div>
+                    </div>
+                </a>
+            </div>
             {% endfor %}
         </div>
     </div>
