@@ -1,6 +1,4 @@
-from flask import Blueprint, render_template
-from flask import current_app as app
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, send_from_directory
 from flask import current_app as app
 import requests
 
@@ -17,4 +15,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-
+# @resources_bp.route('/media/<path:filename>')
+# def media_file(filename):
+#     return send_from_directory(directory, filename)

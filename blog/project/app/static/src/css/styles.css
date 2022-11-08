@@ -16,7 +16,7 @@
     --input-border-color: rgb(97, 105, 121);
     --render-post-bg-color: rgb(235, 228, 217);
     --body-font-family:  Share Tech Mono, Arial, Helvetica;
-    --post-font-family:  'LinearRegular', Helvetica, Arial;
+    --post-font-family:  'CriativaSansRegular', Helvetica, Arial;
     /* --post-font-family:  'GidolinyaRegular', Helvetica, Arial; */
 }
 
@@ -95,10 +95,6 @@ a.logo-img {
     left: 39px;
 }
 
-div.codehilite {
-    width: clamp(60rem, 70%, 80rem);
-    margin-left: 3rem;
-}
 
 pre {
     line-height: 160%;

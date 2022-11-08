@@ -26,6 +26,14 @@ def get_session_data():
     data = [x for x in session.items()]
     return data
 
+def get_blub(post):
+    md = markdown.markdown(post.content)
+    start_ind = md.find('<p>') + 3
+    end_ind = md.find('</p>')
+    raw_blurb = md[start_ind:end_ind]
+    s = raw_blurb.find('>') + 1
+    blurb = raw_blurb[s:]
+    return blurb
 
 @home_bp.route('/', endpoint='home', methods=['GET'])
 def home():
@@ -36,9 +44,7 @@ def home():
     for post in query:
         title = post.title
         post_id = post.id
-        md = markdown.markdown(post.content)
-        end_ind = md.find('</p>')
-        blurb = md[3:end_ind]
+        blurb = get_blub(post)
         posts.append((title, post_id, blurb))
     likes = Likes.query.first()
     num_likes = likes.number

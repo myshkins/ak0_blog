@@ -63,10 +63,12 @@ section h2 {
 .about-container {
     display: flex;
     justify-content: center;
+    margin-top: 4rem;
 }
 
 .about-container p {
-    max-width: 80vw;
+    max-width: 60vw;
     color: var(--greeting-color);
     font-size: 1.5rem;
+    line-height: 2rem;
 }
