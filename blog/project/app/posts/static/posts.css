@@ -58,7 +58,7 @@ input[type='submit'] {
     grid-template-columns: 80vw;
 }
 
-ul {
+.post-list-container ul {
     margin-right: auto;
     padding: 1rem;
     font-size: 2rem;
@@ -69,7 +69,7 @@ ul {
     line-height: 3rem;
 }
 
-ul a {
+.post-list-container ul a {
     color: var(--contact-link-color);
     text-decoration: none;
 }
