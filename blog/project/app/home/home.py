@@ -26,7 +26,7 @@ def get_session_data():
     data = [x for x in session.items()]
     return data
 
-def get_blub(post):
+def get_blurb(post):
     md = markdown.markdown(post.content)
     start_ind = md.find('<p>') + 3
     end_ind = md.find('</p>')
@@ -39,21 +39,23 @@ def get_blub(post):
 def home():
     if not Likes.query.first():
         first_like()
-    query = Post.query.limit(5).all()
+    query = db.session.execute(
+        db.select(Post).order_by(Post.time.asc()) #why doesn't asc() / desc() do anthing?
+    ).scalars()
     posts = []
     for post in query:
         title = post.title
         post_id = post.id
-        blurb = get_blub(post)
-        posts.append((title, post_id, blurb))
+        blurb = get_blurb(post)
+        posts.insert(0, (title, post_id, blurb))
     likes = Likes.query.first()
     num_likes = likes.number
     data = {item[0]:item[1] for item in get_session_data()}
     return render_template(
         'index.html',
         posts=posts,
-        logged_in=current_user.is_active, 
-        likes=num_likes, 
+        logged_in=current_user.is_active,
+        likes=num_likes,
         data=data
         )
 
