@@ -1,20 +1,20 @@
 :root {
-    --bg-color: rgb(44, 47, 53);
-    --nav-bg-color: rgb(128, 123, 112);
+    --bg-color: rgb(38, 40, 44);
+    --nav-bg-color: rgb(170, 167, 162);
     --nav-text-color: rgb(18, 24, 31);
-    --greeting-color: rgb(243, 220, 178);
+    --greeting-color: rgb(176, 207, 198);
     --greeting-font-size: 1.8rem;
-    --header-color: rgb(223, 184, 113);
+    --header-color: rgb(140, 177, 166);
     --header-font-size: 2.5rem;
     --hr-color: rgb(131, 124, 111);
-    --blurb-title-color: rgb(180, 140, 66);
+    --blurb-title-color: rgb(209, 111, 111);
     --blurb-content-bg-color: #3f434b;
     --content-font-size: 1.3rem;
-    --contact-link-color: rgb(255, 123, 0);
+    --contact-link-color: rgb(207, 80, 80);
     --container-bg-color: rgb(177, 165, 146);
     --input-btn-bg-color: rgb(161, 199, 189);
     --input-border-color: rgb(97, 105, 121);
-    --render-post-bg-color: rgb(235, 228, 217);
+    --render-post-bg-color: rgb(223, 221, 219);
     --body-font-family:  Share Tech Mono, Arial, Helvetica;
     --post-font-family:  'CriativaSansRegular', Helvetica, Arial;
     /* --post-font-family:  'GidolinyaRegular', Helvetica, Arial; */
@@ -183,3 +183,5 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .codehilite .vi { color: #19177C } /* Name.Variable.Instance */
 .codehilite .vm { color: #19177C } /* Name.Variable.Magic */
 .codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+

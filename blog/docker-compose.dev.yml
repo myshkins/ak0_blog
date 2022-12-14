@@ -3,7 +3,9 @@ version: '3.8'
 services:
   app:
     container_name: ak_blog
-    build: ./project
+    build:
+      context: ./project
+      dockerfile: Dockerfile.dev
     command: python -m wsgi 0.0.0.0:8100
     ports:
       - 8100:5000

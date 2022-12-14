@@ -19,7 +19,7 @@
 .like-count {
     margin: 0 auto 0 1rem;
     font-size: 1.5rem;
-    color: var(--header-color);
+    color: var(--blurb-title-color);
     align-self: flex-end;
 }
 

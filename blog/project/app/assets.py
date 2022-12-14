@@ -1,12 +1,12 @@
+"""flask compile assets module"""
 from flask import current_app as app
 from flask_assets import Bundle
-import os
-from dotenv import load_dotenv
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, ".env.local.dev"))
 
 def compile_assets(assets):
+    """flask compile assets function"""
+    assets.autobuild = True
+    assets.debug = False
     main_style_bundle = Bundle(
         'src/css/*.css',
         filters='cssmin',

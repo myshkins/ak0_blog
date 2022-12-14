@@ -40,7 +40,7 @@ def home():
     if not Likes.query.first():
         first_like()
     query = db.session.execute(
-        db.select(Post).order_by(Post.time.asc()) #why doesn't asc() / desc() do anthing?
+        db.select(Post).order_by(Post.time.asc()).fetch(5) #why doesn't asc() / desc() do anthing?
     ).scalars()
     posts = []
     for post in query:
